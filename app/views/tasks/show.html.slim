@@ -1,0 +1,18 @@
+.jumbotron
+  .container
+      table.table.table-hover.table-bordered
+        thead
+          tr
+            th Title
+            th Created at
+            th Completed
+            th Edit
+            th
+
+        tbody
+            tr
+              td= @task.title
+              td.text-info= @task.created_at
+              td.text-success= @task.completed
+              td= link_to 'Edit', edit_task_path(@task)
+              td= link_to 'Go home', root_path
