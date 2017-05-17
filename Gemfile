@@ -11,6 +11,7 @@ gem 'bootstrap-sass'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap-datepicker-rails'
 gem 'simple_form'
+gem 'devise'
 # mongodb as database => mongoid is orm
 gem 'mongoid', '~> 6.0.0'
 gem 'slim'
