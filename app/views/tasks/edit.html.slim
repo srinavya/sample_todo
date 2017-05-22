@@ -15,6 +15,6 @@
         = f.date_field :completed, class: 'form-control'
         
         = f.label :aasm_state
-        = f.text_field :aasm_state, class: 'form-control'
+        = f.select :aasm_state, ['incomplete', 'completed']
 
         = f.submit 'Save Changes', class: 'btn btn-primary'
