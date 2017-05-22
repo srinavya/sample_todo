@@ -1,8 +1,10 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!
   before_action :find_task, only: [:edit, :destroy, :show, :update]
+
+  # after_action :verify_authorized, except: :index
+  # after_action :verify_policy_scoped, only: :index
   def index
-    @tasks = Task.all
   end
 
   def new
@@ -10,8 +12,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.create(task_params)
+    @task = current_user.tasks.build(task_params)
     if @task.save
+      flash[:notice] = 'successfully created task'
       redirect_to root_path
     else
       render 'new'
@@ -25,15 +28,18 @@ class TasksController < ApplicationController
   end
 
   def update
+    authorize @task
     if @task.update_attributes(task_params)
-      flash[:success] = 'successfull update'
-      redirect_to @task
+      flash[:notice] = 'successfull update'
+      redirect_to root_path
     else
+      flash[:notice] = 'failed update'
       render 'edit'
     end
   end
 
   def destroy
+    authorize @task, :destroy
     @task.destroy
     flash[:success] = 'user deleted'
     redirect_to root_path

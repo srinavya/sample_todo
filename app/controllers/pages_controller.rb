@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
   def home
-    @tasks = Task.all
+    @tasks = policy_scope(Task).all
+  end
+
+  def index
   end
 end
