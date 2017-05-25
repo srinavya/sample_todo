@@ -1,5 +1,4 @@
 .jumbotron
-
   .row
     .col-md-6.col-md-offset-3
       h3
@@ -10,8 +9,10 @@
 
         = f.label :note
         = f.text_field :note, class: 'form-control'
-
+        
         = f.label :completed
-        = f.date_field :completed, class: 'form-control'
-
+        = f.text_field :completed, data: { provide: 'datepicker'}, class: 'form-control'
+           
+          
         = f.submit 'Save', class: 'btn btn-primary'
+     

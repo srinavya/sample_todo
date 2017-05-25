@@ -15,6 +15,8 @@ gem 'devise'
 gem 'pundit'
 gem 'enumerize'
 gem 'aasm'
+gem 'bootstrap-datepicker-rails'
+gem 'jquery-rails'
 # mongodb as database => mongoid is orm
 gem 'mongoid', '~> 6.0.0'
 gem 'slim'
@@ -25,9 +27,10 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-gem 'rspec-rails'
+
 
 group :test do
+  gem 'faker'
   gem 'rails-controller-testing'
 end
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -53,6 +56,9 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13.0'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
+  gem 'faker'
+  gem 'factory_girl_rails'
 end
 
 group :development do

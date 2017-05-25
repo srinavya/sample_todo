@@ -3,6 +3,7 @@ class Task
   include Mongoid::Timestamps
   include AASM
 
+  validates :title, :note, :completed, presence: true
   belongs_to :user
   field :title, type: String
   field :note, type: String
