@@ -4,8 +4,7 @@ class TasksController < ApplicationController
 
   # after_action :verify_authorized, except: :index
   # after_action :verify_policy_scoped, only: :index
-  def index
-  end
+  def index; end
 
   def new
     @task = Task.new
@@ -21,11 +20,9 @@ class TasksController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     authorize @task

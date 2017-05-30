@@ -3,6 +3,5 @@ class PagesController < ApplicationController
     @tasks = policy_scope(Task).all
   end
 
-  def index
-  end
+  def index; end
 end
