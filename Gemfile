@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'mongoid', '~> 6.0.0'
 gem 'slim'
 gem 'slim-rails'
+gem 'searchkick'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

@@ -2,6 +2,7 @@ class Task
   include Mongoid::Document
   include Mongoid::Timestamps
   include AASM
+  searchkick
 
   validates :title, :note, :completed, presence: true
   belongs_to :user
