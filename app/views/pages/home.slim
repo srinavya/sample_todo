@@ -6,6 +6,9 @@
         | Welcome to todo app
       - if user_signed_in?
         = link_to 'New Task', new_task_path , class: 'btn btn-primary'
+        <br>
+        <br>
+        = link_to 'search tasks', tasks_path, class: 'btn btn-primary'
 
 -if user_signed_in?
   .container

@@ -4,7 +4,14 @@ class TasksController < ApplicationController
 
   # after_action :verify_authorized, except: :index
   # after_action :verify_policy_scoped, only: :index
-  def index; end
+
+  def index
+    if params[:q].blank?
+      @tasks = policy_scope(Task).all
+    else
+      @tasks = policy_scope(Task).search(params[:q])
+    end
+  end
 
   def new
     @task = Task.new

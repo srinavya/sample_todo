@@ -14,14 +14,14 @@ gem 'simple_form'
 gem 'devise'
 gem 'pundit'
 gem 'enumerize'
-gem 'aasm'
-gem 'bootstrap-datepicker-rails'
 gem 'jquery-rails'
+gem 'aasm'
 # mongodb as database => mongoid is orm
 gem 'mongoid', '~> 6.0.0'
 gem 'slim'
 gem 'slim-rails'
 gem 'searchkick'
+gem 'kaminari-mongoid'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -30,9 +30,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'rubocop', '~> 0.49.0', require: false
 
-
 group :test do
-  gem 'faker'
+
   gem 'rails-controller-testing'
 end
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -59,8 +58,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13.0'
   gem 'selenium-webdriver'
   gem 'rspec-rails'
-  gem 'faker'
   gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :test do

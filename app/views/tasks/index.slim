@@ -1,0 +1,26 @@
+<br>
+.jumbotron
+  .col-xs-12
+    = simple_form_for '', url: tasks_path, method: :get, wrapper: :inline_form do |f|
+      .input-group
+        = f.input :q, label: false, placeholder: 'search tasks..',
+          input_html: { value: params.dig(:search, :q), class: 'form-control' }, 
+          autofocus: true
+        span.input-group-btn
+          = f.submit 'search', class: 'btn btn-secondary'
+  
+  = console  
+  - if flash[:notice]
+    .alert.alert-info = notice        
+  .col-xs-12
+  	table.table.table-hover.table-bordered
+      thead
+        tr
+          th title
+          th note
+          th deadline
+          th status
+      tbody
+        = render @tasks
+          
+	

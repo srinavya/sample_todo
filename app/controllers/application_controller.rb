@@ -5,8 +5,12 @@ class ApplicationController < ActionController::Base
 
   private
 
-   def user_not_authorized
-     flash[:notice] = "You are not authorized to perform this action."
-     redirect_to(request.referrer || root_path)
-   end
+  def user_not_authorized
+    flash[:notice] = 'You are not authorized to perform this action.'
+    redirect_to(request.referrer || root_path)
+  end
+
+  def query
+    params[:q].blank? ? '*' : params[:q]
+  end
 end

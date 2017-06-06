@@ -3,6 +3,7 @@ class Task
   include Mongoid::Timestamps
   include AASM
   searchkick
+  self.reindex
 
   validates :title, :note, :completed, presence: true
   belongs_to :user
