@@ -1,0 +1,13 @@
+.jumbotron
+  .row
+    .col-md-6.col-md-offset-3
+      h3
+        | New Task
+      = simple_form_for @task, input_html: {class: "form-horizontal center"} do |f|
+        = f.input :title, required: true, input_html: { class: 'form-control'}
+        = f.input :note, input_html: { class: 'form-control'}
+        = f.input :completed, as: :datetime, input_html: { class: 'form-control'}   
+        = f.button :submit, input_html: { class: 'btn btn-secondary' }
+        
+coffee:
+  new App.DateTimePicker()

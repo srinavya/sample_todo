@@ -9,7 +9,7 @@ end
 gem 'rails', '~> 5.1.0'
 gem 'bootstrap-sass'
 gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap-datepicker-rails'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'simple_form'
 gem 'devise'
 gem 'pundit'
