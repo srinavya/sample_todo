@@ -1,15 +1,42 @@
-.navbar.navbar-fixed-top.navbar-inverse
-  .container
-    = link_to "Sample Todo App", root_path, id: "logo"
-    .nav
+.container  
+  #mynavbar.nav.navbar.navbar-default
+    .navbar-header
+      button.navbar-toggle[type="button" data-toggle="collapse" data-target="#navbar-collapse"]
+        span.sr-only
+          | Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand[href=root_path]
+        | SAMPLE TODO
+      
+    #navbar-collapse.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
-            li
-              = link_to current_user.email, edit_user_registration_path
-            li
-              = link_to "Logout", destroy_user_session_path, method: :delete
+          li.nav-item
+            = link_to current_user.email, edit_user_registration_path
+          li.nav-item
+            = link_to "Logout", destroy_user_session_path, method: :delete
         - else
-          li
+          li.nav-item
             = link_to "Login", new_user_session_path
-          li
+          li.nav-item
             = link_to "Sign-up", new_user_registration_path
+
+
+
+                / .navbar.navbar-fixed-top.navbar-inverse
+                /   .container
+                /     = link_to "Sample Todo App", root_path, id: "logo"
+                /     .nav
+                /       ul.nav.navbar-nav.navbar-right
+                /         - if user_signed_in?
+                /             li
+                /               = link_to current_user.email, edit_user_registration_path
+                /             li
+                /               = link_to "Logout", destroy_user_session_path, method: :delete
+                /         - else
+                /           li
+                /             = link_to "Login", new_user_session_path
+                /           li
+                /             = link_to "Sign-up", new_user_registration_path
