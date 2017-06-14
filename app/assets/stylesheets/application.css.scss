@@ -18,6 +18,13 @@
   @import "bootstrap";
   @import 'bootstrap-datetimepicker';
 
+  body {
+  background-image: image-url('background.jpg');
+  }
+  .jumbotron {
+    margin-top: auto;
+    background: #FFFAFA;
+  }
 
   #logo {
     float: left;

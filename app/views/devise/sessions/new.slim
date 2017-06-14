@@ -1,15 +1,17 @@
-.jumbotron
-  .row
-    .col-md-6.offset-md-3
-      - if flash[:alert]
-        .alert.alert-info = flash[:alert]
-      h2
-        | Log in
-      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .form-inputs
-          = f.input :email, required: true, label: false, placeholder: 'Email'
-          = f.input :password, required: true, label: false, placeholder: 'password', hint: 'hint: min of 6 characters'
-          = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-        .form-actions
-          = f.button :submit, "Log in"
-      = render "devise/shared/links"
+.container
+  .jumbotron
+    .row
+      .col-md-6.col-md-offset-4
+        - if flash[:alert]
+          .alert.alert-info = flash[:alert]
+        h2
+          | Log in
+        = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .form-inputs
+            = f.input :email, required: true, label: false, placeholder: 'Email'
+            = f.input :password, required: true, label: false, placeholder: 'password', hint: 'hint: min of 6 characters'
+            = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+          .form-actions
+            = f.button :submit, "Log in"
+        = render "devise/shared/links"
+    

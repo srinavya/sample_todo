@@ -45,7 +45,7 @@ class TasksController < ApplicationController
   def destroy
     authorize @task, :destroy
     @task.destroy
-    flash[:success] = 'user deleted'
+    flash[:notice] = 'successfully deleted'
     redirect_to root_path
   end
 
