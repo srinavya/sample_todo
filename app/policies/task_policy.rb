@@ -1,6 +1,6 @@
 class TaskPolicy < ApplicationPolicy
   def update?
-    user.admin?
+    user.registered?
   end
 
   def destroy

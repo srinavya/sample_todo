@@ -30,7 +30,7 @@ class User
   before_create :assign_role
 
   def assign_role
-    roles << Role.create(name: :registered)
+    roles << Role.find_or_create_by(name: :registered)
   end
 
   def admin?
@@ -40,6 +40,13 @@ class User
   def registered?
     true
   end
+
+  # # meta
+  # Role.enumerized_attributes[:name].values.each do |role|
+  #   define_method "#{role}?" do
+  #     roles.pluck(:name).include?(role)
+  #   end
+  # end
 
   ## Confirmable
   # field :confirmation_token,   type: String
